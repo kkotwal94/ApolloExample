@@ -1,5 +1,12 @@
 import React from "react";
+import { graphql } from "react-apollo";
+import { allPokemon } from "../Graphql/Pokemon";
 
-const Pokedex = props => <div>Pokedex</div>;
+const Pokedex = ({ allPokemon }) => <div>Pokedex</div>;
 
-export default Pokedex;
+export default graphql(allPokemon, {
+  name: "allPokemon",
+  options: ownProps => ({
+    variables: { first: 10 }
+  })
+})(Pokedex);
