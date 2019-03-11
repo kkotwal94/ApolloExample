@@ -1,26 +1,28 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React, { Component } from "react";
+import { Route } from "react-router";
+import { BrowserRouter } from "react-router-dom";
+import { MuiThemeProvider } from "@material-ui/core/styles";
+import { ApolloProvider } from "react-apollo";
+import { ApolloProvider as ApolloProviderHooks } from "react-apollo-hooks";
+import { Home, Pokedex } from "./Screens";
+import { Navigation } from "./Components";
+import { Apollo as client, Theme as theme } from "./Initialize";
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <ApolloProvider client={client}>
+        <ApolloProviderHooks client={client}>
+          <MuiThemeProvider theme={theme}>
+            <BrowserRouter>
+              <div>
+                <Navigation />
+                <Route exact path="/pokedex" component={Pokedex} />
+                <Route exact path="/" component={Home} />
+              </div>
+            </BrowserRouter>
+          </MuiThemeProvider>
+        </ApolloProviderHooks>
+      </ApolloProvider>
     );
   }
 }
