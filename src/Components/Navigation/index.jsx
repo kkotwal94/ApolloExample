@@ -44,6 +44,12 @@ const Navigation = props => {
             <Button color="inherit">Todo List</Button>
           </Link>
           <Link
+            to="/loaded-todos"
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            <Button color="inherit">Loading Todo List</Button>
+          </Link>
+          <Link
             to="/create-todo"
             style={{ textDecoration: "none", color: "white" }}
           >

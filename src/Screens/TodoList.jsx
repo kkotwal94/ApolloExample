@@ -1,10 +1,10 @@
 import React from "react";
-import { graphql, Query, compose } from "react-apollo";
+import { graphql, Query, compose, Mutation } from "react-apollo";
 import { allTodos, updateTodo } from "../Graphql/Todo";
 import Grid from "@material-ui/core/Grid";
 import List from "@material-ui/core/List";
 import Todo from "../Components/Todo";
-import { useQuery } from "react-apollo-hooks";
+import { useQuery, useMutation } from "react-apollo-hooks";
 
 //TODO: Talking points: skip!, HOC vs RenderProps vs Hooks.
 
@@ -67,6 +67,7 @@ export default compose(
  */
 // const TodoList = () => {
 //   const { data, loading, error } = useQuery(allTodos);
+//   const updateTodoMutation = useMutation(updateTodo);
 //   if (loading) {
 //     return <p>{loading}</p>;
 //   }
@@ -84,7 +85,22 @@ export default compose(
 //     <Grid container>
 //       {loadedTodos.map((aTodo, index) => (
 //         <Grid item xs={12} key={`TodoLoaded-${index}`}>
-//           <p>{aTodo.author}</p>
+//           <Todo
+//             id={aTodo._id}
+//             author={aTodo.author}
+//             todo={aTodo.todo}
+//             isComplete={aTodo.isComplete}
+//             onToggle={() =>
+//               updateTodoMutation({
+//                 variables: {
+//                   author: aTodo.author,
+//                   _id: aTodo._id,
+//                   isComplete: !aTodo.isComplete,
+//                   todo: aTodo.todo
+//                 }
+//               })
+//             }
+//           />
 //         </Grid>
 //       ))}
 //     </Grid>
@@ -101,13 +117,32 @@ export default compose(
 //         if (error) return `Error! ${error.message}`;
 //         const { allTodos: loadedTodos } = data;
 //         return (
-//           <Grid container>
-//             {loadedTodos.map((aTodo, index) => (
-//               <Grid item xs={12} key={`TodoLoaded-${index}`}>
-//                 <p>{aTodo.author}</p>
+//           <Mutation mutation={updateTodo}>
+//             {updateTodoMutation => (
+//               <Grid container>
+//                 {loadedTodos.map((aTodo, index) => (
+//                   <Grid item xs={12} key={`TodoLoaded-${index}`}>
+//                     <Todo
+//                       id={aTodo._id}
+//                       author={aTodo.author}
+//                       todo={aTodo.todo}
+//                       isComplete={aTodo.isComplete}
+//                       onToggle={() =>
+//                         updateTodoMutation({
+//                           variables: {
+//                             author: aTodo.author,
+//                             _id: aTodo._id,
+//                             isComplete: !aTodo.isComplete,
+//                             todo: aTodo.todo
+//                           }
+//                         })
+//                       }
+//                     />
+//                   </Grid>
+//                 ))}
 //               </Grid>
-//             ))}
-//           </Grid>
+//             )}
+//           </Mutation>
 //         );
 //       }}
 //     </Query>

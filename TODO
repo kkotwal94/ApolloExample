@@ -2,21 +2,23 @@ Tasks:
     Meta:
         ✔ Rename Pokemon to TODOS @started(19-03-18 01:03) @done(19-03-18 01:03) @lasted(41s)
         ☐ Create power point slide talking about fetch policies
-        ☐ Create List component @started(19-03-18 02:03)
+        ✔ Create List component @started(19-03-18 02:03) @done(19-03-18 18:35) @lasted(16h32m24s)
     Queries:
         ✔ Query example (HOC) @done(19-03-18 00:56)
         ✔ Query Example with React Hooks @done(19-03-18 00:56)
         ✔ Query Example with Query component @done(19-03-18 00:56)
         ✔ Need to add update TODO by checkbox example in hoc QUERY @done(19-03-18 02:24)
-        ☐ Need to add update TODO to hooks and mutation example in TodoList.jsx
+        ✔ Need to add update TODO to hooks and mutation example in TodoList.jsx @started(19-03-18 18:32) @done(19-03-18 18:32) @lasted(13s)
         ☐ Show cache being updated Slide / walkthrough
         ☐ Walk though apollo dev tools
     Mutations: 
         ✔ Mutation Example (HOC) @started(19-03-18 00:58) @done(19-03-18 01:44) @lasted(46m43s)
         ✔ Mutation Example with React Hooks @done(19-03-18 02:03)
         ✔ Mutation Example with Mutation Component @done(19-03-18 02:03)
-        ☐ Show cache updates 
+        ☐ Show cache updates
         ☐ Walk through apollo dev tools
+    WithApollo, Consumer:
+        ☐ Show example of manually firing query
     Apollo Link State:
         ☐ Show example with a spinner when we are 'loading'
         ☐ Show example of notification after mutation
