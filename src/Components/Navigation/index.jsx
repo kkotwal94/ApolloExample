@@ -37,20 +37,17 @@ const Navigation = props => {
           </IconButton>
           <Typography variant="h6" color="inherit" className={classes.grow}>
             <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-              Apollo Pokemon Example
+              Apollo Todo Example
             </Link>
           </Typography>
-          <Link
-            to="/pokedex"
-            style={{ textDecoration: "none", color: "white" }}
-          >
-            <Button color="inherit">Pokedex</Button>
+          <Link to="/todos" style={{ textDecoration: "none", color: "white" }}>
+            <Button color="inherit">Todo List</Button>
           </Link>
           <Link
-            to="/create-pokemon"
+            to="/create-todo"
             style={{ textDecoration: "none", color: "white" }}
           >
-            <Button color="inherit">Create Pokemon</Button>
+            <Button color="inherit">Create Todo</Button>
           </Link>
         </Toolbar>
       </AppBar>

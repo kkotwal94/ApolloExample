@@ -1,5 +1,5 @@
-import CreatePokemon from "./CreatePokemon";
+import CreateTodo from "./CreateTodo";
 import Home from "./Home";
-import Pokedex from "./Pokedex";
+import TodoList from "./TodoList";
 
-export { CreatePokemon, Home, Pokedex };
+export { CreateTodo, Home, TodoList };
