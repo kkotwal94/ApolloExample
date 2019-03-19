@@ -17,6 +17,7 @@ Tasks:
         ✔ Mutation Example with Mutation Component @done(19-03-18 02:03)
         ✔ Show cache updates @done(19-03-18 19:12)
         ✔ Walk through apollo dev tools @done(19-03-18 19:12)
+        ☐ Perform Cache Update with update function @started(19-03-18 23:14)
     WithApollo, Consumer:
         ✔ Show example of manually firing query @done(19-03-18 19:12)
     Apollo Link State:

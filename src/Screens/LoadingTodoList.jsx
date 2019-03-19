@@ -16,7 +16,9 @@ class TodoList extends Component {
   };
 
   loadTodos = async () => {
-    const { data } = await this.props.client.query({ query: allTodos });
+    const { data } = await this.props.client.query({
+      query: allTodos
+    });
     console.log(data);
     const { allTodos: loadedTodos } = data;
     this.setState({

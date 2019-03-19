@@ -8,7 +8,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Paper from "@material-ui/core/Paper";
 import { graphql, Mutation, compose } from "react-apollo";
-import { addTodo } from "../Graphql/Todo";
+import { addTodo, allTodos } from "../Graphql/Todo";
 import toggleNotification from "../Graphql/Notification";
 import { useMutation } from "react-apollo-hooks";
 
@@ -63,16 +63,50 @@ class CreateTodo extends Component {
   };
 
   createTodo = async () => {
-    const { addTodo, toggleNotification } = this.props;
-    console.log(toggleNotification);
+    const { addTodo, toggleNotification, optimistic } = this.props;
     const { author, todo, isComplete } = this.state;
-    const newTodo = await addTodo({
+    await addTodo({
       variables: {
         author,
         todo,
         isComplete
-      }
+      },
+
+      // One pattern to take is refetching
+      //refetchQueries: () => ["allTodos"]
+
+      // Another pattern is to update the cache directly yourself
+      update: (cache, { data: { addTodo } }) => {
+        try {
+          const { allTodos: todos } = cache.readQuery({ query: allTodos });
+          console.log(todos);
+          console.log(addTodo);
+          cache.writeQuery({
+            query: allTodos,
+            data: { allTodos: todos.concat([addTodo]) }
+          });
+        } catch (e) {
+          console.log(e);
+        }
+      },
+      optimisticResponse: optimistic
+        ? {
+            __typename: "Mutation",
+            addTodo: {
+              _id: -1,
+              __typename: "Todo",
+              author,
+              isComplete,
+              todo,
+              createdAt: new Date().toString(),
+              updatedAt: new Date().toString(),
+              deletedAt: null
+            }
+          }
+        : {}
     });
+
+    //Toggle notifcation post creation
     toggleNotification({
       variables: {
         open: true,
@@ -80,7 +114,7 @@ class CreateTodo extends Component {
         message: "Item was added successfully!"
       }
     });
-    console.log(newTodo);
+    // console.log(newTodo);
   };
   render() {
     const { classes } = this.props;

@@ -25,29 +25,31 @@ const TodoList = ({ allTodos, updateTodo }) => {
     return <p>{error}</p>;
   }
 
+  console.log(loadedTodos);
   return (
     <Grid container>
       <List>
-        {loadedTodos.map((aTodo, index) => (
-          <Grid item xs={12} key={`TodoLoaded-${index}`}>
-            <Todo
-              id={aTodo._id}
-              author={aTodo.author}
-              todo={aTodo.todo}
-              isComplete={aTodo.isComplete}
-              onToggle={() =>
-                updateTodo({
-                  variables: {
-                    author: aTodo.author,
-                    _id: aTodo._id,
-                    isComplete: !aTodo.isComplete,
-                    todo: aTodo.todo
-                  }
-                })
-              }
-            />
-          </Grid>
-        ))}
+        {loadedTodos &&
+          loadedTodos.map((aTodo, index) => (
+            <Grid item xs={12} key={`TodoLoaded-${index}`}>
+              <Todo
+                id={aTodo._id}
+                author={aTodo.author}
+                todo={aTodo.todo}
+                isComplete={aTodo.isComplete}
+                onToggle={() =>
+                  updateTodo({
+                    variables: {
+                      author: aTodo.author,
+                      _id: aTodo._id,
+                      isComplete: !aTodo.isComplete,
+                      todo: aTodo.todo
+                    }
+                  })
+                }
+              />
+            </Grid>
+          ))}
       </List>
     </Grid>
   );
@@ -56,6 +58,7 @@ const TodoList = ({ allTodos, updateTodo }) => {
 export default compose(
   graphql(allTodos, {
     name: "allTodos"
+    //options: { fetchPolicy: "cache-and-network" }
   }),
   graphql(updateTodo, {
     name: "updateTodo"

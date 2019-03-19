@@ -21,6 +21,9 @@ const addTodo = gql`
       author
       isComplete
       todo
+      createdAt
+      updatedAt
+      deletedAt
     }
   }
 `;
