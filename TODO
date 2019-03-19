@@ -20,6 +20,37 @@ Tasks:
     WithApollo, Consumer:
         ✔ Show example of manually firing query @done(19-03-18 19:12)
     Apollo Link State:
-        ☐ Show example of notification after mutation
+        ✔ Show example of notification after mutation @done(19-03-18 23:05)
     Optimistic Response:
         ☐ Show example of optimistic ui with slow network
+Presentation:
+    Introduction:
+        ☐ What is apollo?
+        ☐ What does the apollo eco system consist of?
+        ☐ What are some direct comparisons?
+        ☐ What is the alternative?
+    Queries:
+        ☐ What is a query
+        ☐ HOC example of query
+        ☐ Query options
+        ☐ React Hooks Example
+        ☐ Walk through code
+    Mutation: 
+        ☐ What is a Mutation
+        ☐ What is refetch?
+        ☐ What are some examples of updating and optimistic response
+        ☐ What are some mutation options
+        ☐ Mutation Example (hooks, hoc, component)
+        ☐ Walk through code
+    Apollo Local State:
+        ☐ What does it do?
+        ☐ How can we set defaults?
+        ☐ How do we create resolvers?
+        ☐ Find example of custom fields locally based off network response
+    Extending Apollo:
+        ☐ Discuss login headers etc
+        ☐ Apollo http batch
+        ☐ Apollo errors
+    Issues with apollo:
+        ☐ Describe personal issues with apollo (Too many ideas? Open PR since 6 months ago)
+        ☐ A lot of extenstions (similar to redux)
