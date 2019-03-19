@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import { ApolloProvider } from "react-apollo";
 import { ApolloProvider as ApolloProviderHooks } from "react-apollo-hooks";
+import { Apollo as client, Theme as theme } from "./Initialize";
 import {
   Home,
   CreateTodo,
@@ -11,9 +12,7 @@ import {
   LoadingTodoList,
   OptimisticResponse
 } from "./Screens";
-import { Navigation } from "./Components";
-import { Apollo as client, Theme as theme } from "./Initialize";
-import { Notification } from "./Components/Notification";
+import { Navigation, Notification } from "./Components";
 class App extends Component {
   render() {
     return (

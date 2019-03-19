@@ -70,40 +70,40 @@ class CreateTodo extends Component {
         author,
         todo,
         isComplete
-      },
+      }
 
       // One pattern to take is refetching
       //refetchQueries: () => ["allTodos"]
 
       // Another pattern is to update the cache directly yourself
-      update: (cache, { data: { addTodo } }) => {
-        try {
-          const { allTodos: todos } = cache.readQuery({ query: allTodos });
-          console.log(todos);
-          console.log(addTodo);
-          cache.writeQuery({
-            query: allTodos,
-            data: { allTodos: todos.concat([addTodo]) }
-          });
-        } catch (e) {
-          console.log(e);
-        }
-      },
-      optimisticResponse: optimistic
-        ? {
-            __typename: "Mutation",
-            addTodo: {
-              _id: -1,
-              __typename: "Todo",
-              author,
-              isComplete,
-              todo,
-              createdAt: new Date().toString(),
-              updatedAt: new Date().toString(),
-              deletedAt: null
-            }
-          }
-        : {}
+      // update: (cache, { data: { addTodo } }) => {
+      //   try {
+      //     const { allTodos: todos } = cache.readQuery({ query: allTodos });
+      //     console.log(todos);
+      //     console.log(addTodo);
+      //     cache.writeQuery({
+      //       query: allTodos,
+      //       data: { allTodos: todos.concat([addTodo]) }
+      //     });
+      //   } catch (e) {
+      //     console.log(e);
+      //   }
+      // },
+      // optimisticResponse: optimistic
+      //   ? {
+      //       __typename: "Mutation",
+      //       addTodo: {
+      //         _id: -1,
+      //         __typename: "Todo",
+      //         author,
+      //         isComplete,
+      //         todo,
+      //         createdAt: new Date().toString(),
+      //         updatedAt: new Date().toString(),
+      //         deletedAt: null
+      //       }
+      //     }
+      //   : {}
     });
 
     //Toggle notifcation post creation

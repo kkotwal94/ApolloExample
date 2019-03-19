@@ -1,7 +1,7 @@
 Tasks:
     Meta:
         ✔ Rename Pokemon to TODOS @started(19-03-18 01:03) @done(19-03-18 01:03) @lasted(41s)
-        ☐ Create power point slide talking about fetch policies
+        ✔ Create power point slide talking about fetch policies @done(19-03-19 00:31)
         ✔ Create List component @started(19-03-18 02:03) @done(19-03-18 18:35) @lasted(16h32m24s)
     Queries:
         ✔ Query example (HOC) @done(19-03-18 00:56)
@@ -17,41 +17,44 @@ Tasks:
         ✔ Mutation Example with Mutation Component @done(19-03-18 02:03)
         ✔ Show cache updates @done(19-03-18 19:12)
         ✔ Walk through apollo dev tools @done(19-03-18 19:12)
-        ☐ Perform Cache Update with update function @started(19-03-18 23:14)
+        ✔ Perform Cache Update with update function @started(19-03-18 23:14) @done(19-03-19 00:20) @lasted(1h6m46s)
     WithApollo, Consumer:
         ✔ Show example of manually firing query @done(19-03-18 19:12)
     Apollo Link State:
         ✔ Show example of notification after mutation @done(19-03-18 23:05)
     Optimistic Response:
-        ☐ Show example of optimistic ui with slow network
+        ✔ Show example of optimistic ui with slow network @done(19-03-19 00:20)
 Presentation:
     Introduction:
-        ☐ What is apollo?
-        ☐ What does the apollo eco system consist of?
-        ☐ What are some direct comparisons?
-        ☐ What is the alternative?
+        ✔ What is apollo? @done(19-03-19 00:30)
+        ✔ What does the apollo eco system consist of? @done(19-03-19 00:30)
+        ✔ What are some direct comparisons? @done(19-03-19 00:30)
     Queries:
-        ☐ What is a query
-        ☐ HOC example of query
-        ☐ Query options
-        ☐ React Hooks Example
-        ☐ Walk through code
+        ✔ What is a query @done(19-03-19 00:41)
+        ✔ HOC example of query @done(19-03-19 00:41)
+        ✔ Query options @done(19-03-19 00:47)
+        ✔ React Hooks Example @done(19-03-19 00:47)
+        ✔ Walk through code @done(19-03-19 00:47)
+        ✔ Manually firing a query @done(19-03-19 00:50)
     Mutation: 
-        ☐ What is a Mutation
-        ☐ What is refetch?
-        ☐ What are some examples of updating and optimistic response
-        ☐ What are some mutation options
-        ☐ Mutation Example (hooks, hoc, component)
-        ☐ Walk through code
+        ✔ What is a Mutation @done(19-03-19 00:57)
+        ✔ What is refetch? @done(19-03-19 01:00)
+        ✔ What are some examples of updating and optimistic response @done(19-03-19 01:00)
+        ✔ What are some mutation options @done(19-03-19 01:00)
+        ✔ Mutation Example (hooks, hoc, component) @done(19-03-19 01:00)
+        ✔ Walk through code @done(19-03-19 01:00)
+    Subscriptions:
+        ✔ What is a subscription @done(19-03-19 01:04)
+        ✔ Code Example in slide @done(19-03-19 01:04)
     Apollo Local State:
-        ☐ What does it do?
-        ☐ How can we set defaults?
-        ☐ How do we create resolvers?
-        ☐ Find example of custom fields locally based off network response
+        ✔ What does it do? @done(19-03-19 01:06)
+        ✔ How can we set defaults? @done(19-03-19 01:06)
+        ✔ How do we create resolvers? @done(19-03-19 01:06)
+        ✔ Find example of custom fields locally based off network response @done(19-03-19 01:06)
     Extending Apollo:
-        ☐ Discuss login headers etc
-        ☐ Apollo http batch
-        ☐ Apollo errors
+        ✔ Discuss login headers etc @done(19-03-19 01:15)
+        ✔ Apollo http batch @done(19-03-19 01:15)
+        ✔ Apollo errors @done(19-03-19 01:15)
     Issues with apollo:
-        ☐ Describe personal issues with apollo (Too many ideas? Open PR since 6 months ago)
-        ☐ A lot of extenstions (similar to redux)
+        ✔ Describe personal issues with apollo (Too many ideas? Open PR since 6 months ago) @done(19-03-19 01:15)
+        ✔ A lot of extenstions (similar to redux) @done(19-03-19 01:15)
