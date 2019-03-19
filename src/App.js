@@ -7,7 +7,7 @@ import { ApolloProvider as ApolloProviderHooks } from "react-apollo-hooks";
 import { Home, CreateTodo, TodoList, LoadingTodoList } from "./Screens";
 import { Navigation } from "./Components";
 import { Apollo as client, Theme as theme } from "./Initialize";
-
+import { Notification } from "./Components/Notification";
 class App extends Component {
   render() {
     return (
@@ -21,6 +21,7 @@ class App extends Component {
                 <Route exact path="/loaded-todos" component={LoadingTodoList} />
                 <Route exact path="/create-todo" component={CreateTodo} />
                 <Route exact path="/" component={Home} />
+                <Notification />
               </div>
             </BrowserRouter>
           </MuiThemeProvider>

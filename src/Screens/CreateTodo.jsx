@@ -9,6 +9,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import Paper from "@material-ui/core/Paper";
 import { graphql, Mutation, compose } from "react-apollo";
 import { addTodo } from "../Graphql/Todo";
+import toggleNotification from "../Graphql/Notification";
 import { useMutation } from "react-apollo-hooks";
 
 const styles = theme => ({
@@ -62,13 +63,21 @@ class CreateTodo extends Component {
   };
 
   createTodo = async () => {
-    const { addTodo } = this.props;
+    const { addTodo, toggleNotification } = this.props;
+    console.log(toggleNotification);
     const { author, todo, isComplete } = this.state;
     const newTodo = await addTodo({
       variables: {
         author,
         todo,
         isComplete
+      }
+    });
+    toggleNotification({
+      variables: {
+        open: true,
+        variant: "Success",
+        message: "Item was added successfully!"
       }
     });
     console.log(newTodo);
@@ -139,7 +148,8 @@ class CreateTodo extends Component {
 
 export default compose(
   withStyles(styles),
-  graphql(addTodo, { name: "addTodo" })
+  graphql(addTodo, { name: "addTodo" }),
+  graphql(toggleNotification, { name: "toggleNotification" })
 )(CreateTodo);
 
 /** TODO: React hooks example */

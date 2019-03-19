@@ -9,18 +9,17 @@ Tasks:
         ✔ Query Example with Query component @done(19-03-18 00:56)
         ✔ Need to add update TODO by checkbox example in hoc QUERY @done(19-03-18 02:24)
         ✔ Need to add update TODO to hooks and mutation example in TodoList.jsx @started(19-03-18 18:32) @done(19-03-18 18:32) @lasted(13s)
-        ☐ Show cache being updated Slide / walkthrough
-        ☐ Walk though apollo dev tools
+        ✔ Show cache being updated Slide / walkthrough @done(19-03-18 19:12)
+        ✔ Walk though apollo dev tools @done(19-03-18 19:12)
     Mutations: 
         ✔ Mutation Example (HOC) @started(19-03-18 00:58) @done(19-03-18 01:44) @lasted(46m43s)
         ✔ Mutation Example with React Hooks @done(19-03-18 02:03)
         ✔ Mutation Example with Mutation Component @done(19-03-18 02:03)
-        ☐ Show cache updates
-        ☐ Walk through apollo dev tools
+        ✔ Show cache updates @done(19-03-18 19:12)
+        ✔ Walk through apollo dev tools @done(19-03-18 19:12)
     WithApollo, Consumer:
-        ☐ Show example of manually firing query
+        ✔ Show example of manually firing query @done(19-03-18 19:12)
     Apollo Link State:
-        ☐ Show example with a spinner when we are 'loading'
         ☐ Show example of notification after mutation
     Optimistic Response:
         ☐ Show example of optimistic ui with slow network
